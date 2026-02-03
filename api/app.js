@@ -2,6 +2,7 @@ const express = require('express');
 const { createClient } = require('@supabase/supabase-js');
 const cors = require('cors');
 const app = express();
+app.get('/favicon.ico', (req, res) => res.status(204).end());
 const port = 3000;
 app.use(cors());
 app.use(express.json());
