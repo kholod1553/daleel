@@ -7,4 +7,4 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // تصدير المتغير باسم محدد
-module.exports = { supabase };
+module.exports = supabase;

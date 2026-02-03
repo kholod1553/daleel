@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { supabase } = require('../supabase'); 
+// تأكدي أن المسار '../supabase' يشير للملف الذي يحتوي على createClient
+const supabase = require('../supabase'); 
+
 router.get('/governorate', async (req, res) => {
     const { data, error } = await supabase
         .from('governorate') 
@@ -11,11 +13,9 @@ router.get('/governorate', async (req, res) => {
         return res.status(500).json({ error: error.message });
     }
     
-    console.log("Data fetched:", data); // عشان تشوفي البيانات في الـ Terminal عندك
     res.json(data);
 });
 
-// 2. جلب المدن (للتأكد أنها تعمل أيضاً)
 router.get('/cities/:govId', async (req, res) => {
     const { data, error } = await supabase
         .from('city')
