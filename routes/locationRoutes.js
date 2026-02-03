@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const supabase = require('../app'); 
-
-// 1. جلب كل المحافظات
+const { supabase } = require('../supabase'); 
 router.get('/governorate', async (req, res) => {
-    // نستخدم الاسم الجديد الظاهر في صورتك
     const { data, error } = await supabase
         .from('governorate') 
         .select('*');

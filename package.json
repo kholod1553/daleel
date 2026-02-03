@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node --env-file=.env app.js",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dev": "nodemon app.js",
@@ -13,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "homepage": "https://kholod1553.github.io/daleel/",
   "dependencies": {
     "@supabase/supabase-js": "^2.93.3",
     "cors": "^2.8.6",
